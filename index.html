@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siegward Games — Small Indie Studio</title>
+  <meta name="description" content="Siegward Games is a small independent studio creating playful desktop game experiences. Desktop Bouncer — a cute bouncing ball overlay game, coming soon to Steam." />
+
+  <!-- Google Fonts: Syne (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Warm ambient background -->
+  <div class="bg-warm" aria-hidden="true">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Studio logo mark: monitor window + bouncing ball -->
+      <a href="#hero" class="nav-logo" aria-label="Siegward Games — home">
+        <svg class="logo-mark" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Monitor frame -->
+          <rect x="1" y="1" width="26" height="19" rx="3.5" stroke="currentColor" stroke-width="1.8"/>
+          <!-- Title bar divider -->
+          <line x1="1.9" y1="7.5" x2="26.1" y2="7.5" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.45"/>
+          <!-- Window dots -->
+          <circle cx="5.5" cy="4.5" r="1.3" fill="currentColor" fill-opacity="0.55"/>
+          <circle cx="9.2" cy="4.5" r="1.3" fill="currentColor" fill-opacity="0.35"/>
+          <!-- Ball body inside window -->
+          <circle cx="14" cy="14.5" r="5.2" fill="currentColor"/>
+          <!-- Ball eyes -->
+          <circle cx="12.2" cy="13.8" r="1.05" fill="#0e0c0b"/>
+          <circle cx="15.8" cy="13.8" r="1.05" fill="#0e0c0b"/>
+          <!-- Ball smile -->
+          <path d="M12.1 16.2 Q14 17.8 15.9 16.2" stroke="#0e0c0b" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          <!-- Monitor stand legs -->
+          <path d="M10.5 20 L9.5 24.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M17.5 20 L18.5 24.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="7" y1="24.5" x2="21" y2="24.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Siegward Games</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#game">Game</a></li>
+        <li><a href="#contact" class="nav-cta-link">Contact</a></li>
+      </ul>
+
+      <!-- Hamburger for mobile -->
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <ul role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#game">Game</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+
+      <div class="hero-badge reveal">IN DEVELOPMENT</div>
+
+      <h1 class="hero-title reveal rv-d1">Siegward<br><span class="accent-text">Games</span></h1>
+
+      <p class="hero-subtitle reveal rv-d2">
+        A small indie studio creating playful desktop game experiences.
+      </p>
+
+      <div class="hero-buttons reveal rv-d3">
+        <!-- ============================================================
+             STEAM BUTTON
+             Replace this Steam URL with the real Steam page URL.
+             Example: https://store.steampowered.com/app/APPID/GameName/
+             ============================================================ -->
+        <a
+          href="https://store.steampowered.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          <!-- Steam icon -->
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.187.008l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.455 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/>
+          </svg>
+          Steam Page Coming Soon
+        </a>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
+      </div>
+
+    </div>
+
+    <!-- Mascot cluster -->
+    <div class="hero-visual reveal rv-d2" aria-hidden="true">
+      <div class="mascot-stage">
+
+        <!-- MASCOT 1 — Red ball, main character, happy -->
+        <div class="m-wrap m1">
+          <svg viewBox="0 0 100 108" xmlns="http://www.w3.org/2000/svg" class="mascot-svg">
+            <defs>
+              <radialGradient id="m1b" cx="36%" cy="28%" r="72%">
+                <stop offset="0%"   stop-color="#f56550"/>
+                <stop offset="52%"  stop-color="#d43820"/>
+                <stop offset="100%" stop-color="#861008"/>
+              </radialGradient>
+            </defs>
+            <!-- Shadow -->
+            <ellipse cx="50" cy="104" rx="26" ry="5" fill="#000" fill-opacity="0.2"/>
+            <!-- Body -->
+            <circle cx="50" cy="52" r="46" fill="url(#m1b)"/>
+            <!-- Gloss highlight -->
+            <ellipse cx="34" cy="31" rx="15" ry="10" fill="white" fill-opacity="0.2" transform="rotate(-22 34 31)"/>
+            <ellipse cx="30" cy="27" rx="6" ry="4" fill="white" fill-opacity="0.22" transform="rotate(-22 30 27)"/>
+            <!-- Left eye sclera -->
+            <circle cx="37" cy="50" r="9.5" fill="white"/>
+            <!-- Right eye sclera -->
+            <circle cx="63" cy="50" r="9.5" fill="white"/>
+            <!-- Left pupil -->
+            <circle cx="38.5" cy="51" r="5.8" fill="#1a0c08"/>
+            <!-- Right pupil -->
+            <circle cx="64.5" cy="51" r="5.8" fill="#1a0c08"/>
+            <!-- Left eye shine (main) -->
+            <circle cx="41" cy="48" r="2.4" fill="white"/>
+            <!-- Left eye shine (small) -->
+            <circle cx="37" cy="53.5" r="1.1" fill="rgba(255,255,255,0.55)"/>
+            <!-- Right eye shine (main) -->
+            <circle cx="67" cy="48" r="2.4" fill="white"/>
+            <!-- Right eye shine (small) -->
+            <circle cx="63" cy="53.5" r="1.1" fill="rgba(255,255,255,0.55)"/>
+            <!-- Left eyebrow -->
+            <path d="M29 39 Q37 35 45 38.5" stroke="#8a1008" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <!-- Right eyebrow -->
+            <path d="M55 38.5 Q63 34.5 71 38.5" stroke="#8a1008" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <!-- Left blush -->
+            <circle cx="26" cy="60" r="9.5" fill="#ff7055" fill-opacity="0.27"/>
+            <!-- Right blush -->
+            <circle cx="74" cy="60" r="9.5" fill="#ff7055" fill-opacity="0.27"/>
+            <!-- Smile -->
+            <path d="M38 67 Q50 78 62 67" stroke="#8a1008" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- MASCOT 2 — Orange ball, playful/excited -->
+        <div class="m-wrap m2">
+          <svg viewBox="0 0 100 108" xmlns="http://www.w3.org/2000/svg" class="mascot-svg">
+            <defs>
+              <radialGradient id="m2b" cx="36%" cy="28%" r="72%">
+                <stop offset="0%"   stop-color="#f08848"/>
+                <stop offset="52%"  stop-color="#d05520"/>
+                <stop offset="100%" stop-color="#882808"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="50" cy="104" rx="26" ry="5" fill="#000" fill-opacity="0.18"/>
+            <circle cx="50" cy="52" r="46" fill="url(#m2b)"/>
+            <ellipse cx="34" cy="31" rx="15" ry="10" fill="white" fill-opacity="0.18" transform="rotate(-22 34 31)"/>
+            <ellipse cx="30" cy="27" rx="6" ry="4" fill="white" fill-opacity="0.2" transform="rotate(-22 30 27)"/>
+            <!-- Left eye (wider open for excited look) -->
+            <circle cx="37" cy="50" r="9.5" fill="white"/>
+            <circle cx="63" cy="50" r="9.5" fill="white"/>
+            <circle cx="38" cy="51" r="5.8" fill="#1a0c08"/>
+            <circle cx="64" cy="51" r="5.8" fill="#1a0c08"/>
+            <circle cx="40.5" cy="48" r="2.4" fill="white"/>
+            <circle cx="36.5" cy="54" r="1.1" fill="rgba(255,255,255,0.55)"/>
+            <circle cx="66.5" cy="48" r="2.4" fill="white"/>
+            <circle cx="62.5" cy="54" r="1.1" fill="rgba(255,255,255,0.55)"/>
+            <!-- Eyebrows (raised, excited) -->
+            <path d="M29 37.5 Q37 33 45 36.5" stroke="#882808" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <path d="M55 36.5 Q63 32.5 71 36.5" stroke="#882808" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <!-- Blush -->
+            <circle cx="26" cy="60" r="9.5" fill="#ffa060" fill-opacity="0.27"/>
+            <circle cx="74" cy="60" r="9.5" fill="#ffa060" fill-opacity="0.27"/>
+            <!-- Small open-mouth O (excited) -->
+            <ellipse cx="50" cy="69" rx="7" ry="5" fill="#882808"/>
+            <ellipse cx="50" cy="69" rx="5.2" ry="3.6" fill="#c04018"/>
+          </svg>
+        </div>
+
+        <!-- MASCOT 3 — Amber ball, calm/content -->
+        <div class="m-wrap m3">
+          <svg viewBox="0 0 100 108" xmlns="http://www.w3.org/2000/svg" class="mascot-svg">
+            <defs>
+              <radialGradient id="m3b" cx="36%" cy="28%" r="72%">
+                <stop offset="0%"   stop-color="#f0a858"/>
+                <stop offset="52%"  stop-color="#c06020"/>
+                <stop offset="100%" stop-color="#8a3808"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="50" cy="104" rx="26" ry="5" fill="#000" fill-opacity="0.16"/>
+            <circle cx="50" cy="52" r="46" fill="url(#m3b)"/>
+            <ellipse cx="34" cy="31" rx="15" ry="10" fill="white" fill-opacity="0.17" transform="rotate(-22 34 31)"/>
+            <ellipse cx="30" cy="27" rx="6" ry="4" fill="white" fill-opacity="0.18" transform="rotate(-22 30 27)"/>
+            <!-- Left eye (softer, slightly smaller for calm look) -->
+            <circle cx="37" cy="51" r="8.5" fill="white"/>
+            <circle cx="63" cy="51" r="8.5" fill="white"/>
+            <circle cx="38" cy="52" r="5" fill="#1a0c08"/>
+            <circle cx="64" cy="52" r="5" fill="#1a0c08"/>
+            <circle cx="40" cy="49.5" r="2" fill="white"/>
+            <circle cx="37" cy="54" r="0.9" fill="rgba(255,255,255,0.5)"/>
+            <circle cx="66" cy="49.5" r="2" fill="white"/>
+            <circle cx="63" cy="54" r="0.9" fill="rgba(255,255,255,0.5)"/>
+            <!-- Eyebrows (gentle, relaxed) -->
+            <path d="M30 40.5 Q37 37.5 44 40" stroke="#8a3808" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M56 40 Q63 37 70 40.5" stroke="#8a3808" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Blush -->
+            <circle cx="26" cy="60" r="9.5" fill="#ffb070" fill-opacity="0.26"/>
+            <circle cx="74" cy="60" r="9.5" fill="#ffb070" fill-opacity="0.26"/>
+            <!-- Content small smile -->
+            <path d="M41 67 Q50 74 59 67" stroke="#8a3808" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+      </div><!-- .mascot-stage -->
+    </div><!-- .hero-visual -->
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-col-text">
+          <p class="eyebrow reveal">The Studio</p>
+          <h2 class="section-heading reveal rv-d1">Small Indie<br><span class="accent-text">Studio</span></h2>
+          <p class="body-text reveal rv-d2">
+            Siegward Games is a small independent game studio focused on lightweight, playful games that bring a little personality to your desktop.
+          </p>
+          <p class="body-text reveal rv-d3">
+            We keep things simple and honest — small team, clear vision, and a genuine love for making games that feel good to use every day.
+          </p>
+        </div>
+
+        <div class="about-col-card reveal rv-d2">
+          <div class="info-card">
+            <div class="info-stat-row">
+              <div class="info-stat">
+                <span class="info-num">01</span>
+                <span class="info-label">Game in development</span>
+              </div>
+              <div class="info-stat">
+                <span class="info-num">∞</span>
+                <span class="info-label">Bounces per session</span>
+              </div>
+            </div>
+            <blockquote class="studio-quote">
+              "Games that live alongside you, not just in a window."
+            </blockquote>
+            <div class="tag-row">
+              <span class="chip">Desktop Overlay</span>
+              <span class="chip">Indie</span>
+              <span class="chip">Physics</span>
+              <span class="chip">Cozy</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CURRENT GAME
+       ============================================================ -->
+  <section class="section section-alt" id="game">
+    <div class="container">
+      <p class="eyebrow centered reveal">Current Project</p>
+      <h2 class="section-heading centered reveal rv-d1">Desktop<br><span class="accent-text">Bouncer</span></h2>
+
+      <div class="game-card reveal rv-d2">
+        <div class="game-top">
+          <div class="status-line">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>In development — features and visuals may change</span>
+          </div>
+        </div>
+
+        <p class="game-desc">
+          Desktop Bouncer is a lightweight desktop overlay game where cute bouncing ball characters live on your screen, react with playful physics, and add a bit of charm to your workspace. The project is still in development, so visuals, features, and content may change over time.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-tile reveal rv-d1">
+            <span class="feature-icon">🖥️</span>
+            <div>
+              <strong>Desktop overlay gameplay</strong>
+              <span>Runs on top of your workspace, always present, never intrusive.</span>
+            </div>
+          </div>
+          <div class="feature-tile reveal rv-d2">
+            <span class="feature-icon">⚡</span>
+            <div>
+              <strong>Playful physics</strong>
+              <span>Real-time bouncing, rolling, and satisfying collision feedback.</span>
+            </div>
+          </div>
+          <div class="feature-tile reveal rv-d3">
+            <span class="feature-icon">🌟</span>
+            <div>
+              <strong>Cute ball companions</strong>
+              <span>Ball characters with expressive faces and distinct personalities.</span>
+            </div>
+          </div>
+          <div class="feature-tile reveal rv-d4">
+            <span class="feature-icon">🪶</span>
+            <div>
+              <strong>Lightweight experience</strong>
+              <span>Designed to stay out of the way while still being fun to have around.</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="game-footnote">
+          The base game is planned to be free, with optional cosmetic support content considered for the future.
+        </p>
+
+        <div class="game-cta">
+          <!-- Replace this Steam URL with the real Steam page URL -->
+          <a
+            href="https://store.steampowered.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.187.008l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.606 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.455 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/>
+            </svg>
+            Steam Page Coming Soon
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <p class="eyebrow centered reveal">Get in Touch</p>
+      <h2 class="section-heading centered reveal rv-d1">Say<br><span class="accent-text">Hello</span></h2>
+      <p class="section-sub reveal rv-d2">
+        For press, collaboration, feedback, or general questions, send a message below.
+      </p>
+
+      <div class="form-wrapper reveal rv-d3">
+        <!--
+          =============================================================
+          WEB3FORMS CONTACT FORM
+          =============================================================
+          To activate this form:
+          1. Visit https://web3forms.com/ and sign up with your email.
+          2. They'll send you a free access key.
+          3. Replace YOUR_WEB3FORMS_ACCESS_KEY_HERE below with your key.
+          Submissions go directly to your email. No backend required.
+          =============================================================
+        -->
+        <form
+          class="contact-form"
+          id="contactForm"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          novalidate
+        >
+          <!-- IMPORTANT: Replace YOUR_WEB3FORMS_ACCESS_KEY_HERE with your real Web3Forms access key -->
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+          <input type="hidden" name="redirect" value="false" />
+
+          <!--
+            ANTI-SPAM HONEYPOT FIELD
+            Hidden from real users. Bots fill it in and get rejected by Web3Forms.
+            Do not remove or display this field.
+          -->
+          <input
+            type="checkbox"
+            name="botcheck"
+            id="botcheck"
+            style="display:none;"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Name</label>
+              <input type="text"  id="contactName"    name="name"    placeholder="Your name"        required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail"   name="email"   placeholder="you@example.com"  required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" name="contact_subject" placeholder="Press, collaboration, or just saying hi…" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+          </div>
+
+          <!-- Feedback message area — controlled by script.js -->
+          <div class="form-feedback" id="formFeedback" role="alert" aria-live="polite"></div>
+
+          <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+            <span class="btn-label">Send Message</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          <svg class="logo-mark logo-mark-sm" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1" y="1" width="26" height="19" rx="3.5" stroke="currentColor" stroke-width="1.8"/>
+            <line x1="1.9" y1="7.5" x2="26.1" y2="7.5" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.45"/>
+            <circle cx="5.5" cy="4.5" r="1.3" fill="currentColor" fill-opacity="0.55"/>
+            <circle cx="9.2" cy="4.5" r="1.3" fill="currentColor" fill-opacity="0.35"/>
+            <circle cx="14" cy="14.5" r="5.2" fill="currentColor"/>
+            <circle cx="12.2" cy="13.8" r="1.05" fill="#0e0c0b"/>
+            <circle cx="15.8" cy="13.8" r="1.05" fill="#0e0c0b"/>
+            <path d="M10.5 20 L9.5 24.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M17.5 20 L18.5 24.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="7" y1="24.5" x2="21" y2="24.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+          </svg>
+          <span class="footer-name">Siegward Games</span>
+        </div>
+
+        <p class="footer-sub">Independent game studio</p>
+        <!-- Copyright year is set dynamically by script.js -->
+        <p class="footer-copy">&copy; <span id="copyrightYear"></span> Siegward Games. All rights reserved.</p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
